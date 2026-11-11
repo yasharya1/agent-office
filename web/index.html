@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Office</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="office.css">
+</head>
+<body>
+<div id="errbar" hidden></div>
+<header id="top">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <div class="brand-text">
+      <h1 id="brandTitle">Agent Office</h1>
+      <div id="subtitle" class="subtitle">Opening the office...</div>
+    </div>
+  </div>
+  <div class="hstatus">
+    <span id="blockedPill" class="pill pill-blocked" hidden></span>
+    <span id="modePill" class="pill pill-mode" hidden></span>
+    <span id="offline" class="pill pill-offline" hidden>OFFLINE</span>
+    <button id="alertBtn" class="pill pill-btn" type="button" aria-pressed="false" hidden>Alerts off</button>
+    <button id="rosterBtn" class="pill pill-btn" type="button" aria-controls="roster" aria-pressed="true">Roster</button>
+  </div>
+</header>
+<main id="main">
+  <section id="stageWrap">
+    <div id="stage">
+      <canvas id="office"></canvas>
+      <div id="overlay"></div>
+    </div>
+  </section>
+  <aside id="roster" aria-label="Who is working on what">
+    <div class="r-head">
+      <div class="r-title">Who's on what</div>
+      <div id="rSummary" class="r-summary"></div>
+    </div>
+    <div id="rList" class="r-list"></div>
+  </aside>
+</main>
+<script src="config.js"></script>
+<script src="theme.js"></script>
+<script src="office.js"></script>
+</body>
+</html>

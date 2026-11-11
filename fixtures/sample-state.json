@@ -1,0 +1,471 @@
+{
+ "generated_at": "2026-01-14T17:02:11Z",
+ "sources": {
+  "herdr": true,
+  "sessions": 6
+ },
+ "agents": [
+  {
+   "id": "a:0f1e2d3c4b5a69781",
+   "parent_id": "tz2",
+   "kind": "subagent",
+   "name": "Map the routing module",
+   "role": "Research",
+   "agent_type": "explorer",
+   "model": "sonnet",
+   "department": "api",
+   "desk": "routing",
+   "status": "working",
+   "activity": {
+    "tool": "Grep",
+    "target": "def route",
+    "text": null
+   },
+   "depth": 1,
+   "tool_count": 12,
+   "started_at": "2026-01-14T16:58:40Z",
+   "last_active_at": "2026-01-14T17:02:10Z",
+   "goal": {
+    "text": "Grepping the router for handlers",
+    "source": "todo",
+    "done": 1,
+    "total": 3
+   }
+  },
+  {
+   "id": "a:0f1e2d3c4b5a69782",
+   "parent_id": "tz2",
+   "kind": "subagent",
+   "name": "Summarise the open issue",
+   "role": "General",
+   "agent_type": "general-purpose",
+   "model": "sonnet",
+   "department": "api",
+   "desk": "routing",
+   "status": "done",
+   "activity": {
+    "tool": null,
+    "target": null,
+    "text": null
+   },
+   "depth": 1,
+   "tool_count": 9,
+   "started_at": "2026-01-14T16:51:02Z",
+   "last_active_at": "2026-01-14T16:57:30Z",
+   "goal": {
+    "text": "Summarise the issue",
+    "source": "todo",
+    "done": 4,
+    "total": 4
+   }
+  },
+  {
+   "id": "a:0f1e2d3c4b5a69783",
+   "parent_id": "tz3",
+   "kind": "subagent",
+   "name": "Prior art: pixel office games",
+   "role": "Research",
+   "agent_type": "researcher",
+   "model": "sonnet",
+   "department": "web",
+   "desk": "landing page",
+   "status": "thinking",
+   "activity": {
+    "tool": null,
+    "target": null,
+    "text": null
+   },
+   "depth": 1,
+   "tool_count": 10,
+   "started_at": "2026-01-14T16:40:00Z",
+   "last_active_at": "2026-01-14T17:02:05Z",
+   "goal": {
+    "text": "Research pixel office art styles",
+    "source": "prompt",
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "a:0f1e2d3c4b5a69784",
+   "parent_id": "tz6",
+   "kind": "subagent",
+   "name": "Review the canvas renderer",
+   "role": "Review",
+   "agent_type": "reviewer",
+   "model": "sonnet",
+   "department": "web",
+   "desk": "landing page",
+   "status": "working",
+   "activity": {
+    "tool": "Read",
+    "target": "office.js",
+    "text": null
+   },
+   "depth": 2,
+   "tool_count": 4,
+   "started_at": "2026-01-14T17:00:30Z",
+   "last_active_at": "2026-01-14T17:02:08Z",
+   "goal": {
+    "text": "Reading the renderer",
+    "source": "todo",
+    "done": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "a:0f1e2d3c4b5a69785",
+   "parent_id": "a:0f1e2d3c4b5a69784",
+   "kind": "subagent",
+   "name": "Check sprite hash spread",
+   "role": "Research",
+   "agent_type": "explorer",
+   "model": "haiku",
+   "department": "web",
+   "desk": "landing page",
+   "status": "working",
+   "activity": {
+    "tool": "Bash",
+    "target": "python3 -c 'import hashlib'",
+    "text": null
+   },
+   "depth": 3,
+   "tool_count": 2,
+   "started_at": "2026-01-14T17:01:30Z",
+   "last_active_at": "2026-01-14T17:02:09Z",
+   "goal": {
+    "text": null,
+    "source": null,
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "s:5a1e0c42",
+   "parent_id": null,
+   "kind": "session",
+   "name": "docs-3d",
+   "role": "Lead",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "docs",
+   "desk": "docs-3d",
+   "status": "idle",
+   "activity": {
+    "tool": null,
+    "target": null,
+    "text": null
+   },
+   "depth": 0,
+   "tool_count": 31,
+   "started_at": "2026-01-14T14:10:00Z",
+   "last_active_at": "2026-01-14T16:30:00Z",
+   "goal": {
+    "text": "Split the guide into chapters",
+    "source": "title",
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "tz2",
+   "parent_id": null,
+   "kind": "session",
+   "name": "api-09",
+   "role": "Lead",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "api",
+   "desk": "routing",
+   "status": "working",
+   "activity": {
+    "tool": "Agent",
+    "target": "Map the routing module",
+    "text": "Tracing the request path"
+   },
+   "depth": 0,
+   "tool_count": 47,
+   "started_at": "2026-01-14T16:02:32Z",
+   "last_active_at": "2026-01-14T17:02:09Z",
+   "goal": {
+    "text": "Adding the rate-limit header",
+    "source": "todo",
+    "done": 2,
+    "total": 5
+   }
+  },
+  {
+   "id": "tz3",
+   "parent_id": null,
+   "kind": "session",
+   "name": "web-a1",
+   "role": "Lead",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "web",
+   "desk": "landing page",
+   "status": "working",
+   "activity": {
+    "tool": "Write",
+    "target": "SPEC.md",
+    "text": "Writing the build spec"
+   },
+   "depth": 0,
+   "tool_count": 22,
+   "started_at": "2026-01-14T16:20:00Z",
+   "last_active_at": "2026-01-14T17:02:11Z",
+   "goal": {
+    "text": "Landing page build spec",
+    "source": "title",
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "tz4",
+   "parent_id": null,
+   "kind": "session",
+   "name": "infra-58",
+   "role": "Lead",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "infra",
+   "desk": "ci",
+   "status": "blocked",
+   "activity": {
+    "tool": "Bash",
+    "target": "git worktree remove .claude/worktrees/x",
+    "text": "Waiting for permission"
+   },
+   "depth": 0,
+   "tool_count": 64,
+   "started_at": "2026-01-14T15:00:00Z",
+   "last_active_at": "2026-01-14T17:01:50Z",
+   "goal": {
+    "text": "Speed up the CI cache",
+    "source": "prompt",
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "tz5",
+   "parent_id": null,
+   "kind": "session",
+   "name": "web-77",
+   "role": "Lead",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "web",
+   "desk": "2",
+   "status": "idle",
+   "activity": {
+    "tool": null,
+    "target": null,
+    "text": null
+   },
+   "depth": 0,
+   "tool_count": 5,
+   "started_at": "2026-01-14T16:45:00Z",
+   "last_active_at": "2026-01-14T16:50:00Z",
+   "goal": {
+    "text": "Fix the dark mode toggle",
+    "source": "todo",
+    "done": 3,
+    "total": 3
+   }
+  },
+  {
+   "id": "tz6",
+   "parent_id": "tz3",
+   "kind": "terminal_child",
+   "name": "builder-frontend",
+   "role": "Builder pane",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "web",
+   "desk": "landing page",
+   "status": "working",
+   "activity": {
+    "tool": "Edit",
+    "target": "office.js",
+    "text": "Drawing the break room"
+   },
+   "depth": 1,
+   "tool_count": 38,
+   "started_at": "2026-01-14T16:55:00Z",
+   "last_active_at": "2026-01-14T17:02:10Z",
+   "goal": {
+    "text": "Drawing the break room",
+    "source": "todo",
+    "done": 4,
+    "total": 7
+   }
+  },
+  {
+   "id": "tz7",
+   "parent_id": "tz2",
+   "kind": "terminal_child",
+   "name": "temp-codex",
+   "role": "Contractor",
+   "agent_type": "codex",
+   "model": null,
+   "department": "api",
+   "desk": "routing",
+   "status": "error",
+   "activity": {
+    "tool": null,
+    "target": null,
+    "text": "Command failed with exit code 1"
+   },
+   "depth": 1,
+   "tool_count": 3,
+   "started_at": "2026-01-14T16:59:00Z",
+   "last_active_at": "2026-01-14T17:00:40Z",
+   "goal": {
+    "text": null,
+    "source": null,
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "tz8",
+   "parent_id": null,
+   "kind": "scout",
+   "name": "scout",
+   "role": "Scout",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "office",
+   "desk": "scout",
+   "status": "working",
+   "activity": {
+    "tool": "Read",
+    "target": "TODO.md",
+    "text": "Scouting the task list"
+   },
+   "depth": 0,
+   "tool_count": 14,
+   "started_at": "2026-01-14T15:30:00Z",
+   "last_active_at": "2026-01-14T17:02:06Z",
+   "goal": {
+    "text": "Scout pass every 30 minutes",
+    "source": "prompt",
+    "done": null,
+    "total": null
+   }
+  },
+  {
+   "id": "tz9",
+   "parent_id": "tz8",
+   "kind": "terminal_child",
+   "name": "mgr-p-readme-install",
+   "role": "Builder pane",
+   "agent_type": "claude-code",
+   "model": null,
+   "department": "office",
+   "desk": "scout",
+   "status": "working",
+   "activity": {
+    "tool": "Edit",
+    "target": "README.md",
+    "text": "Fixing the install steps"
+   },
+   "depth": 1,
+   "tool_count": 9,
+   "started_at": "2026-01-14T16:50:00Z",
+   "last_active_at": "2026-01-14T17:02:07Z",
+   "goal": {
+    "text": "Fixing the install steps",
+    "source": "todo",
+    "done": 1,
+    "total": 3
+   }
+  }
+ ],
+ "scout": {
+  "terminal": "tz8",
+  "status": "working",
+  "activity": {
+   "tool": "Read",
+   "target": "TODO.md",
+   "text": "Scouting the task list"
+  },
+  "pitches": [
+   {
+    "id": "p-roster-tests",
+    "title": "Add a test for the roster goal line",
+    "why": "goalLine() in office.js has no test; the casting tests cover casting only",
+    "project": "web",
+    "estimate": "45 min",
+    "kind": "build",
+    "sources": [
+     "web/office.js"
+    ],
+    "status": "open",
+    "created_at": "2026-01-14T16:40:00Z",
+    "updated_at": "2026-01-14T16:40:00Z",
+    "terminal": null,
+    "branch": null,
+    "result": null,
+    "note": null
+   },
+   {
+    "id": "p-readme-install",
+    "title": "Fix the install steps in README.md",
+    "why": "README.md says npm start; package.json has no start script since the last release",
+    "project": "docs",
+    "estimate": "30 min",
+    "kind": "docs",
+    "sources": [
+     "README.md",
+     "package.json"
+    ],
+    "status": "running",
+    "created_at": "2026-01-14T16:45:00Z",
+    "updated_at": "2026-01-14T16:45:00Z",
+    "terminal": "tz9",
+    "branch": "mgr-p-readme-install",
+    "result": null,
+    "note": null
+   },
+   {
+    "id": "p-lint-config",
+    "title": "Add a lint config for the web folder",
+    "why": "TODO.md asks for lint on web/; there is no config yet",
+    "project": "web",
+    "estimate": "40 min",
+    "kind": "review",
+    "sources": [
+     "TODO.md"
+    ],
+    "status": "stuck",
+    "created_at": "2026-01-14T15:10:00Z",
+    "updated_at": "2026-01-14T15:10:00Z",
+    "terminal": null,
+    "branch": "mgr-p-lint-config",
+    "result": "Stuck: lint needs packages that are not installed; no install allowed",
+    "note": null
+   },
+   {
+    "id": "p-changelog",
+    "title": "Write the changelog for the last release",
+    "why": "CHANGELOG.md stops two releases back; git log has the missing entries",
+    "project": "docs",
+    "estimate": "30 min",
+    "kind": "docs",
+    "sources": [
+     "CHANGELOG.md"
+    ],
+    "status": "done",
+    "created_at": "2026-01-14T14:00:00Z",
+    "updated_at": "2026-01-14T14:00:00Z",
+    "terminal": null,
+    "branch": "mgr-p-changelog",
+    "result": "CHANGELOG.md: 2 releases added, 0 tests touched, commit 3f2a1b9",
+    "note": "Merged 3f2a1b9."
+   }
+  ]
+ }
+}

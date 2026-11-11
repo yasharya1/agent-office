@@ -1,0 +1,615 @@
+{
+ "title": "The review lead raises its hand; reception puts it on hold; press Space to approve",
+ "beats": [
+  {
+   "note": "Office open",
+   "add": [
+    {
+     "id": "s:pacer-splits",
+     "parent_id": null,
+     "kind": "session",
+     "name": "pacer-splits",
+     "role": "Lead",
+     "agent_type": "claude-code",
+     "department": "pacer",
+     "desk": "splits",
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "pace.js",
+      "text": "Building the splits table"
+     },
+     "goal": {
+      "text": "Add the splits table",
+      "source": "todo",
+      "done": 2,
+      "total": 5
+     },
+     "age": 900
+    },
+    {
+     "id": "s:pacer-tests",
+     "parent_id": null,
+     "kind": "session",
+     "name": "pacer-tests",
+     "role": "Lead",
+     "agent_type": "claude-code",
+     "department": "pacer",
+     "desk": "tests",
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "node --test",
+      "text": "Running the tests"
+     },
+     "goal": {
+      "text": "Fix the minutes-only bug",
+      "source": "todo",
+      "done": 1,
+      "total": 3
+     },
+     "age": 840
+    },
+    {
+     "id": "s:pacer-presets",
+     "parent_id": null,
+     "kind": "session",
+     "name": "pacer-presets",
+     "role": "Lead",
+     "agent_type": "claude-code",
+     "department": "pacer",
+     "desk": "presets",
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": "Planning the preset buttons"
+     },
+     "goal": {
+      "text": "Race preset buttons",
+      "source": "todo",
+      "done": 0,
+      "total": 4
+     },
+     "age": 780
+    },
+    {
+     "id": "s:pacer-review",
+     "parent_id": null,
+     "kind": "session",
+     "name": "pacer-review",
+     "role": "Lead",
+     "agent_type": "claude-code",
+     "department": "pacer",
+     "desk": "review",
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "index.html",
+      "text": "Reviewing the page"
+     },
+     "goal": {
+      "text": "Review pace.js and index.html",
+      "source": "todo",
+      "done": 1,
+      "total": 4
+     },
+     "age": 720
+    },
+    {
+     "id": "s:pacer-docs",
+     "parent_id": null,
+     "kind": "session",
+     "name": "pacer-docs",
+     "role": "Lead",
+     "agent_type": "claude-code",
+     "department": "pacer",
+     "desk": "docs",
+     "status": "working",
+     "activity": {
+      "tool": "Write",
+      "target": "README.md",
+      "text": "Writing the usage section"
+     },
+     "goal": {
+      "text": "Document the calculator",
+      "source": "todo",
+      "done": 2,
+      "total": 3
+     },
+     "age": 660
+    },
+    {
+     "id": "s:scout",
+     "parent_id": null,
+     "kind": "scout",
+     "name": "scout",
+     "role": "Scout",
+     "agent_type": "claude-code",
+     "department": "office",
+     "desk": "scout",
+     "status": "idle",
+     "activity": {},
+     "goal": {
+      "text": "Scout pass every 4 hours",
+      "source": "prompt",
+      "done": null,
+      "total": null
+     },
+     "age": 1200
+    },
+    {
+     "id": "a:plan-presets",
+     "parent_id": "s:pacer-presets",
+     "kind": "subagent",
+     "name": "Plan the preset buttons",
+     "role": "Planning",
+     "agent_type": "Plan",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "presets",
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "index.html",
+      "text": null
+     },
+     "age": 300
+    },
+    {
+     "id": "a:plan-splits",
+     "parent_id": "s:pacer-splits",
+     "kind": "subagent",
+     "name": "Plan the splits table",
+     "role": "Planning",
+     "agent_type": "Plan",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "splits",
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     },
+     "age": 290
+    },
+    {
+     "id": "a:rev-tests",
+     "parent_id": "s:pacer-tests",
+     "kind": "subagent",
+     "name": "Review the parseTime fix",
+     "role": "Review",
+     "agent_type": "reviewer",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "tests",
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "pace.js",
+      "text": null
+     },
+     "age": 280
+    },
+    {
+     "id": "a:rev-review",
+     "parent_id": "s:pacer-review",
+     "kind": "subagent",
+     "name": "Second look at index.html",
+     "role": "Review",
+     "agent_type": "reviewer",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "review",
+     "status": "working",
+     "activity": {
+      "tool": "Grep",
+      "target": "onclick",
+      "text": null
+     },
+     "age": 270
+    },
+    {
+     "id": "a:debug-tests",
+     "parent_id": "s:pacer-tests",
+     "kind": "subagent",
+     "name": "Trace the minutes-only bug",
+     "role": "Debugging",
+     "agent_type": "debugger",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "tests",
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "node -e \"parseTime('5')\"",
+      "text": null
+     },
+     "age": 260
+    },
+    {
+     "id": "a:build-splits",
+     "parent_id": "s:pacer-splits",
+     "kind": "subagent",
+     "name": "Build the splits table",
+     "role": "Builder",
+     "agent_type": "builder",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "splits",
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "index.html",
+      "text": null
+     },
+     "age": 250
+    },
+    {
+     "id": "a:build-presets",
+     "parent_id": "s:pacer-presets",
+     "kind": "subagent",
+     "name": "Wire the preset buttons",
+     "role": "Builder",
+     "agent_type": "builder",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "presets",
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "pace.js",
+      "text": null
+     },
+     "age": 240
+    },
+    {
+     "id": "a:gen-docs",
+     "parent_id": "s:pacer-docs",
+     "kind": "subagent",
+     "name": "Draft the changelog",
+     "role": "General",
+     "agent_type": "general-purpose",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "docs",
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "TODO.md",
+      "text": null
+     },
+     "age": 230
+    },
+    {
+     "id": "a:guide-docs",
+     "parent_id": "s:pacer-docs",
+     "kind": "subagent",
+     "name": "Look up node:test flags",
+     "role": "Guide",
+     "agent_type": "claude-code-guide",
+     "model": "haiku",
+     "department": "pacer",
+     "desk": "docs",
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     },
+     "age": 220
+    },
+    {
+     "id": "a:build-tests",
+     "parent_id": "s:pacer-tests",
+     "kind": "subagent",
+     "name": "Fix the test fixtures",
+     "role": "Builder",
+     "agent_type": "builder",
+     "model": "sonnet",
+     "department": "pacer",
+     "desk": "tests",
+     "status": "done",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     },
+     "age": 400
+    }
+   ]
+  },
+  {
+   "after": 4,
+   "note": "Review lead raises its hand (reception takes the call)",
+   "set": {
+    "s:pacer-review": {
+     "status": "blocked",
+     "activity": {
+      "tool": "Bash",
+      "target": "node --version",
+      "text": "Waiting for permission"
+     }
+    }
+   }
+  },
+  {
+   "on": "next",
+   "note": "Space = approve",
+   "set": {
+    "s:pacer-review": {
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "node --version",
+      "text": "Checking the Node version"
+     }
+    }
+   }
+  },
+  {
+   "after": 3,
+   "set": {
+    "s:pacer-review": {
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "README.md",
+      "text": "Adding the Node note"
+     }
+    }
+   }
+  },
+  {
+   "after": 4,
+   "set": {
+    "s:pacer-review": {
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "git commit -m \"Note the Node version\"",
+      "text": "Committing"
+     }
+    }
+   }
+  }
+ ],
+ "reactions": {},
+ "ambient": [
+  {
+   "after": 3.5,
+   "set": {
+    "a:rev-tests": {
+     "status": "working",
+     "activity": {
+      "tool": "Grep",
+      "target": "parseTime",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:build-splits": {
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "node --test",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:plan-splits": {
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "pace.js",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:gen-docs": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:debug-tests": {
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "pace.js",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:rev-review": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:build-presets": {
+     "status": "working",
+     "activity": {
+      "tool": "Bash",
+      "target": "node --test",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:guide-docs": {
+     "status": "working",
+     "activity": {
+      "tool": "WebFetch",
+      "target": "nodejs.org/api/test.html",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:plan-presets": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:rev-tests": {
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "test/pace.test.js",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:build-splits": {
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "pace.js",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:gen-docs": {
+     "status": "working",
+     "activity": {
+      "tool": "Write",
+      "target": "CHANGELOG.md",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:debug-tests": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:rev-review": {
+     "status": "working",
+     "activity": {
+      "tool": "Read",
+      "target": "pace.js",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:build-presets": {
+     "status": "working",
+     "activity": {
+      "tool": "Edit",
+      "target": "index.html",
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:guide-docs": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:plan-splits": {
+     "status": "thinking",
+     "activity": {
+      "tool": null,
+      "target": null,
+      "text": null
+     }
+    }
+   }
+  },
+  {
+   "after": 3.5,
+   "set": {
+    "a:plan-presets": {
+     "status": "working",
+     "activity": {
+      "tool": "Write",
+      "target": "PLAN.md",
+      "text": null
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+__pycache__/
+config.json
+scout/SCOUT.md
+scout/SCOUT.draft.md
+scout/pitches.json
+scout/pitches.json.tmp
+scout/last-pass.txt
+.gstack/

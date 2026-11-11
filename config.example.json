@@ -1,0 +1,102 @@
+// Agent Office: every setting with its default. Copy to config.json and edit, or run python3 setup.py.
+// Lines that start with // are comments. Keys you leave out keep their default.
+// Relative paths are relative to the folder that holds config.json.
+{
+  // The folder your agents work in. The scout runs here and reads its sources from here.
+  "workspace": "~",
+
+  // The page listens on http://127.0.0.1:<port>/ only. Nothing else on your network can reach it.
+  "port": 8765,
+
+  // The cast and signs: web/themes/<theme>.js. Copy default.js to make your own.
+  "theme": "default",
+
+  // Where Claude Code keeps sessions and transcripts. The server only reads this folder.
+  "claude_home": "~/.claude",
+
+  // The Herdr command line tool. Without it the office still shows Claude Code sessions.
+  "hc_bin": "hc",
+
+  // Show only agents whose working folder is inside one of these folders, for example ["~/demo"].
+  // Empty shows every agent. Useful for screen recordings and demos.
+  "only_under": [],
+
+  // Department names for the ?fixture=big demo. Live departments come from Herdr tabs or folder names.
+  "departments": [],
+
+  // The role line under each agent's name.
+  "roles": {
+    "scout": "Scout",
+    "session": "Lead",
+    "terminal_child": "Builder pane",
+    "codex": "Contractor",
+    "subagent": {
+      "explorer": "Research", "Explore": "Research", "researcher": "Research",
+      "builder": "Builder", "reviewer": "Review", "debugger": "Debugging", "Plan": "Planning",
+      "general-purpose": "General", "claude-code-guide": "Guide", "fork": "General"
+    },
+    "subagent_default": "Temp"
+  },
+
+  // The scout: an optional Claude Code session that reads your notes, pitches small tasks,
+  // and starts a builder pane for each pitch you assign. It needs Herdr. Read the README's
+  // "Scout safety" section before you turn it on.
+  "scout": {
+    "enabled": false,
+
+    // The hc terminal name. The server only ever sends messages to this name.
+    "name": "scout",
+    // How server messages name it: "<display> is out".
+    "display": "The scout",
+
+    // Its standing orders (write them with the agent-office-scout skill) and its pitch file.
+    "orders": "scout/SCOUT.md",
+    "pitches": "scout/pitches.json",
+
+    // How often it scouts, and the caps: open pitches at once, builders running at once.
+    "every_minutes": 30,
+    "max_open": 2,
+    "max_running": 1,
+    "model": "opus",
+
+    // RISK: true starts the scout with claude --dangerously-skip-permissions. It then runs every
+    // tool call (shell commands, file edits, launching builders) without asking you first.
+    // Leave this false unless you watch its pane and accept that risk.
+    "skip_permissions": false,
+
+    // When it scouts. Days: mon, tue, wed, thu, fri, sat, sun. A missing day: no passes that day.
+    // A day can hold a list: ["09:00-12:00", "13:00-17:00"]. "days": {} means any time.
+    "hours": {
+      "tz": "UTC",
+      "days": {"mon": "09:00-17:00", "tue": "09:00-17:00", "wed": "09:00-17:00", "thu": "09:00-17:00", "fri": "09:00-17:00"}
+    },
+    "hours_label": "working hours",
+
+    // Files it reads for work, relative to workspace. Globs work: "projects/*/NOTES.md".
+    "sources": ["README.md", "TODO.md", "CLAUDE.md"],
+
+    // What the page tells you to run when the scout is out.
+    "start_hint": "scout/start.sh"
+  },
+
+  "builder": {
+    // Tools the scout and every builder pane may not use (claude --disallowedTools).
+    // An MCP server name blocks every tool on that server. These defaults block common chat and
+    // email connectors. Add your own send or write tools: chat, email, CRM, tickets, deploys.
+    "disallowed_tools": [
+      "mcp__slack", "mcp__gmail", "mcp__claude_ai_Slack", "mcp__claude_ai_Gmail",
+      "mcp__claude_ai_Google_Calendar", "mcp__claude_ai_Google_Drive", "mcp__claude_ai_Notion"
+    ],
+    // Or a file with a comma-separated list. When set, it replaces the list above.
+    "disallowed_tools_file": null,
+    "model": "opus",
+
+    // RISK: true launches builder panes with claude --dangerously-skip-permissions. Each builder
+    // then edits files and runs commands in its git worktree without asking you first.
+    // Leave this false unless you accept that risk; with false, approve each builder's prompts in its pane.
+    "skip_permissions": false
+  },
+
+  // Herdr space and tab (ids or names) for the scout's pane. null: the tab you run scout/start.sh from.
+  "herdr": {"space": null, "tab": null}
+}
